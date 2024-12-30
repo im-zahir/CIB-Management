@@ -1,107 +1,80 @@
 # CIB Management System
 
-A comprehensive business management system built with React Native and Expo, designed to help businesses manage their operations efficiently.
+A comprehensive business management system built with React Native and Expo, designed to help businesses manage their operations efficiently with features like production tracking, expense management, and employee management.
 
-## Features
+## Key Features
 
-- **Dashboard**: Real-time overview of business metrics
-  - Total Revenue, Expenses, and Net Profit tracking
-  - Revenue trends visualization
-  - Expense breakdown analysis
-  - Quick actions for common tasks
+- **Authentication & Security**
+  - Secure login and registration
+  - Role-based access control
+  - Encrypted data storage
+  - Offline capabilities
+  - Biometric authentication support
 
 - **Production Management**
-  - Track production quantities
-  - Monitor production status
-  - Record production dates
-  - Manage product inventory
+  - Real-time production tracking
+  - Production analytics and charts
+  - Batch management
+  - Production history
+  - Performance metrics
 
-- **Revenue Management**
-  - Record sales and revenue
-  - Track payment status
-  - Generate revenue reports
-  - View revenue trends
-
-- **Expense Tracking**
-  - Categorize expenses
-  - Track expense dates
-  - Monitor expense trends
-  - Generate expense reports
+- **Financial Management**
+  - Expense tracking and categorization
+  - Revenue management
+  - Financial reports generation
+  - Budget monitoring
+  - Transaction history
 
 - **Employee Management**
-  - Employee information tracking
-  - Salary management
-  - Loan tracking
-  - Employee performance monitoring
+  - Employee profiles
+  - Attendance tracking
+  - Performance monitoring
+  - Role management
+  - Access control
 
-- **Reports Generation**
-  - Customizable reports
-  - Export functionality
+- **Reports & Analytics**
+  - Custom report generation
   - Data visualization
+  - Export to PDF
+  - Chart-based analytics
   - Period-wise analysis
 
-## User Roles & Access Levels
-
-The system supports multiple user roles with different access levels:
-
-### Admin
-- Full system access
-- User management
-- System configuration
-- Access to all reports and analytics
-- Can create/modify all user roles
-
-### Manager
-- Access to dashboard and reports
-- Employee management
-- Production oversight
-- Revenue and expense tracking
-- Limited system configuration
-
-### Accountant
-- Revenue management
-- Expense tracking
-- Financial reports
-- Employee salary management
-- Loan processing
-
-### Production Supervisor
-- Production management
-- Inventory tracking
-- Production reports
-- Basic employee oversight
-- Quality control records
-
-### Employee
-- Personal profile access
-- View assigned tasks
-- Submit production records
-- Request loans
-- View personal reports
-
-### Default Access Restrictions
-- Sensitive financial data limited to Admin and Accountant
-- User management restricted to Admin
-- System configuration limited to Admin
-- Report generation based on role permissions
-- Data modification tracked with user stamps
+- **System Features**
+  - Offline-first architecture
+  - Data backup and restore
+  - Push notifications
+  - Dark/Light theme
+  - Responsive design
 
 ## Tech Stack
 
-- **Framework**: React Native with Expo
-- **Navigation**: Expo Router with file-based routing
-- **State Management**: Redux with Redux Toolkit
+- **Frontend Framework**: React Native with Expo
+- **Navigation**: Expo Router (file-based routing)
+- **State Management**: Redux Toolkit
 - **UI Components**: React Native Paper
-- **Charts**: react-native-chart-kit
 - **Authentication**: Firebase Auth
-- **Storage**: AsyncStorage for local persistence
+- **Local Storage**: 
+  - AsyncStorage
+  - Expo SecureStore
+  - React Native FS
+- **Data Visualization**: react-native-chart-kit
 - **Type Safety**: TypeScript
+- **Date Handling**: date-fns
+- **Security**: crypto-js for encryption
 
-## Getting Started
+## Prerequisites
+
+- Node.js >= 14
+- npm or yarn
+- Expo CLI
+- iOS Simulator (for iOS development)
+- Android Studio (for Android development)
+
+## Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/CIB-Management.git
+   git clone <repository-url>
    cd CIB-Management
    ```
 
@@ -110,56 +83,77 @@ The system supports multiple user roles with different access levels:
    npm install
    ```
 
-3. Start the development server:
+3. Create a .env file in the root directory with the following variables:
+   ```
+   FIREBASE_API_KEY=your_api_key
+   FIREBASE_AUTH_DOMAIN=your_auth_domain
+   FIREBASE_PROJECT_ID=your_project_id
+   FIREBASE_STORAGE_BUCKET=your_storage_bucket
+   FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
+   FIREBASE_APP_ID=your_app_id
+   ```
+
+4. Start the development server:
    ```bash
    npm start
    ```
-
-4. Run on your preferred platform:
-   - Press `i` to run on iOS Simulator
-   - Press `a` to run on Android Emulator
-   - Scan QR code with Expo Go app on your device
 
 ## Project Structure
 
 ```
 CIB-Management/
-├── app/                    # File-based routing directory
+├── app/                    # Expo Router directory
+│   ├── (app)/             # Main app routes
 │   ├── (auth)/            # Authentication routes
-│   └── (tabs)/            # Main app tabs
+│   └── _layout.tsx        # Root layout
 ├── src/
-│   ├── components/        # Reusable components
-│   ├── constants/         # App constants and theme
-│   ├── context/          # React Context providers
-│   ├── hooks/            # Custom React hooks
-│   ├── redux/            # Redux store and slices
-│   ├── screens/          # Screen components
-│   └── services/         # API and service functions
-├── assets/               # Static assets
-└── docs/                # Documentation
+│   ├── components/        # Reusable UI components
+│   ├── context/           # React Context (theme, etc.)
+│   ├── hooks/             # Custom React hooks
+│   ├── screens/           # Screen components
+│   ├── services/          # Business logic services
+│   │   ├── auth.ts        # Authentication service
+│   │   ├── BackupService.js
+│   │   ├── EncryptionService.js
+│   │   ├── NotificationService.js
+│   │   └── OfflineStorage.js
+│   └── store/             # Redux store and slices
+├── assets/                # Static assets
+└── scripts/              # Utility scripts
 ```
 
-## Development
+## Available Scripts
 
-- **TypeScript**: The project uses TypeScript for type safety
-- **Code Style**: ESLint and Prettier for consistent code formatting
-- **Testing**: Jest for unit testing
-- **State Management**: Redux for global state, Context for theme
-- **Navigation**: File-based routing with Expo Router
+- `npm start` - Start the Expo development server
+- `npm run android` - Run on Android
+- `npm run ios` - Run on iOS
+- `npm run web` - Run on web browser
+- `npm test` - Run tests
+- `npm run lint` - Run linting
+- `npm run reset-project` - Reset project state
+- `npm run initialize-users` - Initialize default users
+
+## Security Features
+
+- Encrypted data storage using crypto-js
+- Secure authentication with Firebase
+- Protected routes
+- Biometric authentication support
+- Secure async storage
+- Offline data encryption
 
 ## Contributing
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+2. Create your feature branch (`git checkout -b feature/YourFeature`)
+3. Commit your changes (`git commit -m 'Add some feature'`)
+4. Push to the branch (`git push origin feature/YourFeature`)
+5. Create a Pull Request
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
-## Contact
+## Support
 
-Your Name - [@yourtwitter](https://twitter.com/yourtwitter)
-Project Link: [https://github.com/yourusername/CIB-Management](https://github.com/yourusername/CIB-Management)
+For support, please open an issue in the GitHub repository or contact the development team.
