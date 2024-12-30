@@ -1,0 +1,123 @@
+### **Prompt: Create a Mobile Business Management App Using Expo named "CIB-Management"**
+
+**Objective:**  
+Develop a cross-platform mobile application (iOS and Android) using **Expo** to help a company manage production, revenues, expenses, and employee records. The app will support secure data entry, generate reports, and visualize key metrics in an intuitive, mobile-first interface.
+
+---
+
+### **Requirements**
+
+#### **Authentication:**
+- Implement secure login/signup with Firebase or a custom backend.
+- Use JWT or OAuth for token-based authentication.
+- Role-based access:
+  - **Admin:** Full access to all features.
+  - **Manager:** Access to reports and specific data.
+  - **Employee:** Restricted to data entry.
+- Support biometric authentication (Fingerprint/Face ID).
+
+---
+
+#### **Dashboard:**
+- Display key business metrics:
+  - Total Revenue
+  - Total Expenses
+  - Net Profit
+  - Outstanding Payments
+- Include data visualizations:
+  - Revenue vs. Expenses (Line Chart).
+  - Expense breakdown by category (Pie Chart).
+- Add quick action buttons for tasks like:
+  - "Add Production"
+  - "Add Revenue"
+  - "Add Expense"
+
+---
+
+#### **Data Management Modules:**
+**1. Production Management:**
+   - Add production records with fields for date, product, and quantity.
+   - View production logs in a scrollable list with filters (e.g., date, product).
+
+**2. Revenue Management:**
+   - Add, edit, and track revenue records with fields for date, product, quantity, and payment status.
+   - Visualize revenue trends over time.
+
+**3. Expense Management:**
+   - Track categories like raw materials, salaries, and utilities.
+   - Add fields for date, category, description, and amount.
+   - Show a pie chart of expenses by category.
+
+**4. Employee Management:**
+   - Add and manage employee records, including name, designation, joining date, and salary.
+   - Track loans and generate salary reports.
+
+---
+
+#### **Reports:**
+- Generate interactive reports for:
+  - Revenue (filtered by date, product, customer).
+  - Expenses (filtered by category and date).
+  - Employee salaries and loans.
+- Export reports to PDF and Excel using Expo-compatible libraries.
+- Include charts and tables for data representation.
+
+---
+
+#### **Notifications:**
+- Implement push notifications using Expo Notifications API for:
+  - Payment reminders.
+  - Low inventory alerts (if inventory tracking is included).
+  - Salary payment deadlines.
+
+---
+
+#### **UI/UX Design:**
+- Follow modern mobile design principles with:
+  - A clean and intuitive interface.
+  - Responsive layouts for all screen sizes.
+  - Light and dark mode support.
+- Navigation:
+  - Use tab-based navigation for ease of access.
+  - Include sections like Dashboard, Data Entry, Reports, and Settings.
+
+---
+
+### **Technical Specifications:**
+
+**Frontend:**
+- Framework: React Native with Expo.
+- Navigation: React Navigation.
+- State Management: Redux Toolkit or Context API.
+
+**Backend:**
+- Framework: Node.js with Express.js or Firebase.
+- Database: Firebase Firestore (for real-time data sync) or SQLite for offline mode.
+- API Communication: RESTful API or GraphQL.
+
+**Cloud Services:**
+- Push Notifications: Expo Notifications API.
+- Report Storage: Firebase Cloud Storage or AWS S3.
+
+---
+
+### **Additional Features:**
+- Offline Mode: Allow users to input data offline and sync it when online.
+- Role-based permissions: Ensure secure access to sensitive features.
+- Data encryption: Use secure methods to protect sensitive information.
+
+---
+
+### **Deliverables:**
+1. Fully functional mobile app for iOS and Android.
+2. Backend services integrated with the app.
+3. Database schema and backend API documentation.
+4. Exportable reports (PDF/Excel).
+5. High-fidelity UI designs for core screens.
+
+---
+
+**Key Considerations:**
+- Focus on a seamless and intuitive user experience.
+- Ensure the app is scalable for future features like inventory management or CRM.
+- Optimize performance for both Android and iOS devices.

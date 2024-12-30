@@ -1,50 +1,165 @@
-# Welcome to your Expo app 👋
+# CIB Management System
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A comprehensive business management system built with React Native and Expo, designed to help businesses manage their operations efficiently.
 
-## Get started
+## Features
 
-1. Install dependencies
+- **Dashboard**: Real-time overview of business metrics
+  - Total Revenue, Expenses, and Net Profit tracking
+  - Revenue trends visualization
+  - Expense breakdown analysis
+  - Quick actions for common tasks
 
+- **Production Management**
+  - Track production quantities
+  - Monitor production status
+  - Record production dates
+  - Manage product inventory
+
+- **Revenue Management**
+  - Record sales and revenue
+  - Track payment status
+  - Generate revenue reports
+  - View revenue trends
+
+- **Expense Tracking**
+  - Categorize expenses
+  - Track expense dates
+  - Monitor expense trends
+  - Generate expense reports
+
+- **Employee Management**
+  - Employee information tracking
+  - Salary management
+  - Loan tracking
+  - Employee performance monitoring
+
+- **Reports Generation**
+  - Customizable reports
+  - Export functionality
+  - Data visualization
+  - Period-wise analysis
+
+## User Roles & Access Levels
+
+The system supports multiple user roles with different access levels:
+
+### Admin
+- Full system access
+- User management
+- System configuration
+- Access to all reports and analytics
+- Can create/modify all user roles
+
+### Manager
+- Access to dashboard and reports
+- Employee management
+- Production oversight
+- Revenue and expense tracking
+- Limited system configuration
+
+### Accountant
+- Revenue management
+- Expense tracking
+- Financial reports
+- Employee salary management
+- Loan processing
+
+### Production Supervisor
+- Production management
+- Inventory tracking
+- Production reports
+- Basic employee oversight
+- Quality control records
+
+### Employee
+- Personal profile access
+- View assigned tasks
+- Submit production records
+- Request loans
+- View personal reports
+
+### Default Access Restrictions
+- Sensitive financial data limited to Admin and Accountant
+- User management restricted to Admin
+- System configuration limited to Admin
+- Report generation based on role permissions
+- Data modification tracked with user stamps
+
+## Tech Stack
+
+- **Framework**: React Native with Expo
+- **Navigation**: Expo Router with file-based routing
+- **State Management**: Redux with Redux Toolkit
+- **UI Components**: React Native Paper
+- **Charts**: react-native-chart-kit
+- **Authentication**: Firebase Auth
+- **Storage**: AsyncStorage for local persistence
+- **Type Safety**: TypeScript
+
+## Getting Started
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/CIB-Management.git
+   cd CIB-Management
+   ```
+
+2. Install dependencies:
    ```bash
    npm install
    ```
 
-2. Start the app
-
+3. Start the development server:
    ```bash
-    npx expo start
+   npm start
    ```
 
-In the output, you'll find options to open the app in a
+4. Run on your preferred platform:
+   - Press `i` to run on iOS Simulator
+   - Press `a` to run on Android Emulator
+   - Scan QR code with Expo Go app on your device
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Project Structure
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+CIB-Management/
+├── app/                    # File-based routing directory
+│   ├── (auth)/            # Authentication routes
+│   └── (tabs)/            # Main app tabs
+├── src/
+│   ├── components/        # Reusable components
+│   ├── constants/         # App constants and theme
+│   ├── context/          # React Context providers
+│   ├── hooks/            # Custom React hooks
+│   ├── redux/            # Redux store and slices
+│   ├── screens/          # Screen components
+│   └── services/         # API and service functions
+├── assets/               # Static assets
+└── docs/                # Documentation
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Development
 
-## Learn more
+- **TypeScript**: The project uses TypeScript for type safety
+- **Code Style**: ESLint and Prettier for consistent code formatting
+- **Testing**: Jest for unit testing
+- **State Management**: Redux for global state, Context for theme
+- **Navigation**: File-based routing with Expo Router
 
-To learn more about developing your project with Expo, look at the following resources:
+## Contributing
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
 
-## Join the community
+## License
 
-Join our community of developers creating universal apps.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Contact
+
+Your Name - [@yourtwitter](https://twitter.com/yourtwitter)
+Project Link: [https://github.com/yourusername/CIB-Management](https://github.com/yourusername/CIB-Management)
