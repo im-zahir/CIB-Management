@@ -8,6 +8,7 @@ export interface ProductionRecord {
   batchNumber: string;
   supervisor: string;
   notes?: string;
+  status: 'completed' | 'pending' | 'cancelled';
 }
 
 interface ProductionState {

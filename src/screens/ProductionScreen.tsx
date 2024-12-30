@@ -73,7 +73,7 @@ export function ProductionScreen() {
     }
 
     const record: ProductionRecord = {
-      id: selectedRecord?.id || Date.now(),
+      id: selectedRecord?.id || Date.now().toString(),
       date: format(date, 'yyyy-MM-dd'),
       product,
       quantity: parseInt(quantity),
@@ -103,7 +103,7 @@ export function ProductionScreen() {
     setVisible(true);
   };
 
-  const handleDelete = (id: number) => {
+  const handleDelete = (id: string) => {
     if (window.confirm('Are you sure you want to delete this record?')) {
       dispatch(deleteRecord(id));
     }
@@ -187,6 +187,7 @@ export function ProductionScreen() {
                 width={screenWidth - 48}
                 height={220}
                 yAxisLabel=""
+                yAxisSuffix=""
                 chartConfig={chartConfig}
                 style={styles.chart}
               />
