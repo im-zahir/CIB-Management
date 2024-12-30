@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Slot, useRouter, useSegments } from 'expo-router';
+import { Slot, useRouter, useSegments, Href } from 'expo-router';
 import { PaperProvider, Appbar, IconButton } from 'react-native-paper';
 import { Provider, useDispatch, useSelector } from 'react-redux';
 import { ThemeProvider, useTheme } from '../src/context/theme';
@@ -22,8 +22,8 @@ const useProtectedRoute = (isAuthenticated: boolean, isLoading: boolean) => {
 
     const inAuthGroup = segments[0] === '(auth)';
     let shouldNavigate = false;
-    let path = '';
-
+    let path: Href = '/(app)';
+    
     if (isAuthenticated && inAuthGroup) {
       shouldNavigate = true;
       path = '/(app)';
